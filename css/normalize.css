@@ -1,0 +1,807 @@
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+
+body {
+    margin: 0;
+  
+}
+#loadingScreen {
+  width:100%;
+  height:100%;
+  
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2001;
+  color:white;
+  text-align:center;
+  font: 60px "Ranchers", cursive;
+}
+#loadingText {
+  height:50%;
+  margin-top:25%;
+  width:100%;
+  text-align: center;
+}
+.newHighscore {
+    display:inline-block;
+}
+.muteButton {
+    width:32px;
+    height:32px;
+    opacity:0.85;
+    padding:0px;
+    margin-right:2px;
+    background-color:rgba(50,100,255,0.5);
+
+    border:none;
+    border: 2px solid rgba(50,100,155,0.5);
+    color:black;
+    user-select: none;
+}
+.muteButton.disabled {
+    opacity:0.3;
+}
+.muteButton img {
+    width:32px;
+    height:32px;
+}
+.muteButton:hover {
+    opacity:0.7;
+}
+#instructions {
+    border-radius:25px;
+    font: 25px 'Ranchers';
+    z-index:101;
+    position:absolute;
+    margin-left:20%;
+    width:60%;
+    height:60%;
+    top:20%;
+    display:none;
+    text-align:center
+}
+#changelog {
+  overflow: auto;
+    border-radius:25px;
+    font: 25px 'Ranchers';
+    z-index:101;
+    position:absolute;
+    margin-left:20%;
+    width:60%;
+    height:60%;
+    padding-left:1em;
+    top:20%;
+    display:none;
+    text-align:left
+}
+#changelog b{
+  text-align: center;
+}
+#firstTime {
+    border-radius:25px;
+    font: 25px 'Ranchers';
+    z-index:101;
+    position:absolute;
+    margin-left:20%;
+    width:60%;
+    height:60%;
+    top:20%;
+    display:none;
+    text-align:center
+}
+#instructions p {
+    font:15px 'Ranchers';
+}
+#changelog p {
+    font:15px 'Ranchers';
+}
+#firstTime p {
+    font:15px 'Ranchers';
+}
+#credits {
+    border-radius:25px;
+    font: 25px 'Ranchers';
+    z-index:101;
+    position:absolute;
+    margin-left:20%;
+    width:60%;
+    height:60%;
+    top:20%;
+    display:none;
+    text-align:center
+}
+#credits p {
+    font:15px 'Ranchers';
+}
+.pauseButton {
+    display:none;
+    background-color:rgba(0,0,0,0);
+    border:none;
+    width:32px;
+    height:32px;
+    padding:0px;
+    margin-right:2px;
+}
+.pauseButton.disabled {
+    opacity:0.3;
+}
+.pauseButton img {
+    width:32px;
+    height:32px;
+}
+.pauseButton:hover {
+    opacity:0.5;
+}
+.completed {
+  position: absolute;
+  text-transform: rotate(30deg);
+  font: 40px "Ranchers";
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  z-index: 5001;
+  text-align: center;
+  display:none;
+}
+.dialog {
+  overflow:auto;
+  background-color:rgba(0,0,150,1);
+  background-color:rgba(150,200,255,1);
+  border: 2px solid rgba(50,100,155,0.5);
+  scrollbar: hidden;
+  scrollbar-width:0px;
+}
+#killMessage {
+    margin-top:1%;
+    height:100%;
+    font: 100px 'Ranchers', cursive;
+}
+
+#title {
+    margin-top:5%;
+    height:10%;
+    font: 4em 'Ranchers', cursive;
+    
+    text-shadow:
+        -4px -4px 0 rgba(255,255,255,0.4),
+        4px -4px 0 rgba(200,200,200,0.4),
+        -4px 4px 0 rgba(150,150,150,0.4),
+        4px 4px 0 rgba(100,100,100,0.4);
+}
+#scoreBoard {
+    width:50%;
+    margin-left:20%;
+    margin-right:20%;
+    padding-top:1%;
+    padding-left:5%;
+    padding-right:5%;
+    border-radius:1em;
+    
+    background-color:rgba(0,20,20,0.5);
+    background-color:rgba(0,0,100,0.5);
+    background-color:rgba(50,100,255,0.5);
+    border: 2px solid rgba(50,100,155,0.5);
+
+    font: 0.8em "Ranchers";
+}
+#scoreBoard span {
+}
+.scoreLine {
+    margin-left:10%;
+    width:80%;
+    background-color:rgba(255,255,255,0.5);
+    border-radius:0.1em;
+    box-shadow:0em 0em 0em 0.2em rgba(255,255,255,0.5);
+}
+#Quests {
+    overflow:auto;
+    width:40%;
+    margin-left:25%;
+    margin-right:20%;
+    padding-left:5%;
+    padding-right:5%;
+    padding-bottom:5px;
+    font:15px 'Ranchers';
+    background-color:rgba(10,60,215,0.5);
+    border: 2px solid rgba(50,100,155,0.5);
+    border-top-left-radius:1em;
+    border-top-right-radius:1em;
+    min-height:35%;
+}
+
+.questBar {
+  position: relative;
+    float:left;
+    border-radius:5px;
+    height:20px;
+    width:60%;
+    margin-left:2.5%;
+    margin-right:2.5%;
+    margin-top:5px;
+    margin-bottom:5px;
+    background-color:rgba(50,25,50,1);
+    box-shadow:inset 0em 0em 0.2em 0.2em rgba(0,5,0,0.1);
+}
+.questBarInner {
+    position:absolute;
+    left:0;
+    top:0;
+    float:left;
+    border-radius:5px;
+    height:20px;
+    width:60%;
+    
+    background-color:rgba(150,255,50,1);
+    box-shadow:inset 0em 0em 0.2em 0.2em rgba(0,5,0,0.1);
+}
+.questReward {
+    float:left;
+    width:15%;
+
+}
+.questSkip {
+    float:left;
+    width:15%;
+    margin-left:2.5%;
+    background-color:rgba(255,255,255,0.5);
+    border-radius:10px;
+    text-align:center;
+
+
+}
+.questSkip:hover {
+    background-color:rgba(255,255,255,0.7);
+
+}
+
+.questBarProgress {
+  position: absolute;
+    text-align:center;
+    width:100%;
+    font: 16px "Ranchers";
+    color:white;
+    z-index: 2006;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+
+
+
+}
+.questWrapper {
+  -webkit-transition: move 1s ease-out;
+  -moz-transition: move 1s ease-out;
+  -o-transition: move 1s ease-out;
+  transition: move 1s ease-out;
+    width:80%;
+    position: relative;
+    right:10%;
+    left:10%;
+    float:left;
+    margin-top:5%;
+    height:26%;
+    
+    background-color:rgba(155,255,255,0.5);
+    border-radius:5px;
+    text-align:center;
+    padding:2px;
+}
+
+#quest1 {
+    width:80%;
+    right:10%;
+    left:10%;
+    float:left;
+    margin-top:10px;
+    margin-left:10%;
+    background-color:rgba(255,255,255,0.5);
+    border-radius:5px;
+    text-align:center;
+    padding:2px;
+}
+.questTitle {
+    font: 25px "Ranchers";
+    display:none;
+}
+.questDescription {
+    font: 15px "Ranchers";
+
+}
+#gameOver p {
+    font: 25px "Ranchers";
+    text-align:center;
+    margin-top:0;
+    margin-bottom:0;
+}
+#gameOver span {
+}
+#gameOver button {
+    margin-top:5%;
+    font: 20px "Ranchers", cursive;
+}
+.buttons {
+    width:100%;
+    height:85%;
+}
+.gameOverButton {
+    width: 10%;
+    opacity:0.85;
+    font: 25px 'Ranchers', cursive;
+    
+    
+    
+    background-color:rgba(50,100,255,0.5);
+    border:none;
+    border: 2px solid rgba(50,100,155,0.5);
+}
+.gameOverButton:hover {
+    opacity:0.7;
+}
+.menuButton {
+    width: 30%;
+    opacity:0.85;
+    font: 25px 'Ranchers', cursive;
+    height: 10%;
+    margin-top:5%;
+    margin-left: 35%;
+    background-color:rgba(50,100,255,0.5);
+    border:none;
+    border: 2px solid rgba(50,100,155,0.5);
+}
+.menuButton:hover {
+    opacity:0.7;
+}
+.menuScreen {
+    overflow: hidden;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index:99;
+    width: 100%;
+    height:100%;
+    background-color: rgba(255,255,255,0.4);
+}
+/**
+ * Add the correct display in IE 9-.
+ */
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+
+figcaption,
+figure,
+main { /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+
+a {
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+html [type="button"], /* 1 */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+
+details, /* 1 */
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10-.
+ */
+
+[hidden] {
+  display: none;
+}
