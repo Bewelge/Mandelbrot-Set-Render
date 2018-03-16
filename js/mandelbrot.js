@@ -151,6 +151,7 @@ var settings;
         settingsBar.style.width= width*0.2+"px";
         settingsBar.style.height= height+"px";
         settingsBar.style.left = "5px";
+        settingsBar.style.top = "5%";
 
         $(el).append(settingsBar);
         let footer = createDiv("footer","footer");
@@ -180,16 +181,15 @@ var settings;
         settings.addElement("Iterations:",iteratAm);
         settings.addBoolean("Auto Iteration Amount",true,function(that){
             if (autoIteration==true) {
-                settings.enableControl("Set Iterations:");
+                settings.enableControl("Set Iterations");
                 autoIteration=false;
             } else {
-                settings.disableControl("Set Iterations:");
+                settings.disableControl("Set Iterations");
                 autoIteration=true;
             }
             
         })
-        settings.addRange("Set Iterations:",1,10000,100,1,function(val){
-            console.log(val);
+        settings.addRange("Set Iterations",1,10000,100,1,function(val){
             updateIterationAmount(val);
             if(!delay) {
                 delay=true;
@@ -199,7 +199,7 @@ var settings;
                 },50);
             }
         });
-        settings.disableControl("Set Iterations:");
+        settings.disableControl("Set Iterations");
        
 
 
@@ -649,7 +649,6 @@ var settings;
             return;
         }
         delay = true;
-        console.log(event.wheelDelta);
         let evDel = event.wheelDelta/Math.abs(event.wheelDelta)*Math.min(500,Math.abs(event.wheelDelta));
         var wheel = -(evDel) / 100; //n or -n
 
@@ -693,7 +692,6 @@ var settings;
         mouseY = e.clientY /*- rect.top*/;
         let dis = Distance(mouseX, mouseY, rect.left + rect.width / 2, rect.top + rect.height / 2);
         let ang = angle(mouseX, mouseY, rect.left + rect.width / 2, rect.top + rect.height / 2);
-        console.log(dis, ang);
         let convX = viewBoxPos.x - dis * viewBox / rect.width * Math.cos(ang);
         let convY = viewBoxPos.y + dis * viewBox / rect.height * Math.sin(ang);
         console.log(convX, convY);
@@ -745,7 +743,6 @@ return;
         }
     }
     function mouseMoveCnv(e) {
-        console.log(123);
         let rect = cnv.getBoundingClientRect();
         mouseX = Math.floor(e.clientX - rect.x);
         mouseY = Math.floor(e.clientY - rect.y);
@@ -762,7 +759,6 @@ return;
     function rerunWhenReady() {
 
         if (!ready) {} else {
-            console.log(1233);
             ready = false;
 
             tmpCtx = null;
@@ -836,7 +832,6 @@ return;
             }
         }
         console.timeEnd("Start");
-        console.log(tot, count);
     }
 
     function getInterpolatedDiv(C0, Cn, it) {
