@@ -1,6 +1,8 @@
 # Mandelbrot-Set-Render
 A real-time, GPU accelerated Javascript Mandelbrot-Set render. [Try it here](https://bewelge.github.io/Mandelbrot-Set-Render/)
 
+![Image of Mandelbrotset](https://github.com/Bewelge/Mandelbrot-Set-Render/blob/master/img/Mandelbrot.png)
+
 ### What it does
 
 * Computes and renders the [Mandelbrot set](https://en.wikipedia.org/wiki/Mandelbrot_set) in real-time. 
